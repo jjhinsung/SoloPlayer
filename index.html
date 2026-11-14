@@ -78,6 +78,15 @@
     </aside>
   </div>
 
+  <!-- "Add to playlist" popup menu -->
+  <div class="menu" id="plMenu" hidden>
+    <p class="menu-label">Add to playlist</p>
+    <ul id="plMenuList"></ul>
+    <form id="plMenuForm">
+      <input type="text" id="plMenuName" placeholder="+ New playlist" maxlength="60" autocomplete="off" />
+    </form>
+  </div>
+
   <audio id="audio" preload="metadata"></audio>
 
   <script src="songs.js"></script>
