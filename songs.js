@@ -12,5 +12,6 @@ window.SONGS = [
   "songs/Mk.gee, Dijon, Clairo - I Can't Win.mp3",
   "songs/Remi Wolf, Dominic Fike - Photo ID.mp3",
   "songs/The Kid LAROI - BLEED (Live).mp3",
-  "music/Lukrembo - Bread.mp3"
+  "music/Lukrembo - Bread.mp3",
+  "music/favbea - bossa nova sounds so good when you dont have a bitch in your ear telling you its elevator music.mp3"
 ];
