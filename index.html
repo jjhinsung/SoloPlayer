@@ -8,64 +8,6 @@
 </head>
 <body>
   <div class="app">
-    <!-- ===== Sidebar: library + search ===== -->
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <h1>Library</h1>
-        <label class="folder-btn" title="Load songs from a folder on your computer">
-          <input type="file" id="folderInput" webkitdirectory directory multiple accept="audio/*" />
-          Open folder
-        </label>
-      </div>
-
-      <div class="tabs" role="tablist">
-        <button class="tab on" id="tabSongs" data-view="songs" role="tab">Songs</button>
-        <button class="tab" id="tabPlaylists" data-view="playlists" role="tab">Playlists</button>
-      </div>
-
-      <!-- Songs view -->
-      <div class="view" id="songsView">
-      <div class="search-wrap">
-        <svg viewBox="0 0 24 24" class="search-icon"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.39 5.4-1.42 1.41-5.39-5.39A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/></svg>
-        <input type="search" id="search" placeholder="Search songs or artists…" autocomplete="off" />
-      </div>
-
-      <p class="library-count" id="libraryCount"></p>
-      <ul class="song-list" id="songList"></ul>
-      </div>
-
-      <!-- Playlists view -->
-      <div class="view" id="playlistsView" hidden>
-        <!-- All playlists -->
-        <div id="playlistIndex" class="view">
-          <form class="new-playlist" id="newPlaylistForm">
-            <input type="text" id="newPlaylistName" placeholder="New playlist name…" maxlength="60" autocomplete="off" />
-            <button type="submit" class="pill-btn">Create</button>
-          </form>
-          <ul class="song-list" id="playlistList"></ul>
-        </div>
-
-        <!-- One playlist -->
-        <div id="playlistDetail" class="view" hidden>
-          <div class="pl-head">
-            <button class="icon-btn always" id="plBack" title="Back to playlists">
-              <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20z"/></svg>
-            </button>
-            <div class="pl-title">
-              <h2 id="plName"></h2>
-              <p id="plCount"></p>
-            </div>
-          </div>
-          <div class="pl-actions">
-            <button class="pill-btn primary" id="plPlay">Play</button>
-            <button class="pill-btn" id="plShuffle">Shuffle</button>
-            <button class="text-btn" id="plRename">Rename</button>
-            <button class="text-btn danger" id="plDelete">Delete</button>
-          </div>
-          <ul class="song-list" id="plSongs"></ul>
-        </div>
-      </div>
-    </aside>
 
     <!-- ===== Main: player + queue ===== -->
     <main class="main">
@@ -115,6 +57,25 @@
         <ul class="queue-list" id="queueList"></ul>
       </section>
     </main>
+
+    <!-- ===== Sidebar: library + search ===== -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>Library</h1>
+        <label class="folder-btn" title="Load songs from a folder on your computer">
+          <input type="file" id="folderInput" webkitdirectory directory multiple accept="audio/*" />
+          Open folder
+        </label>
+      </div>
+
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" class="search-icon"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.39 5.4-1.42 1.41-5.39-5.39A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/></svg>
+        <input type="search" id="search" placeholder="Search songs or artists…" autocomplete="off" />
+      </div>
+
+      <p class="library-count" id="libraryCount"></p>
+      <ul class="song-list" id="songList"></ul>
+    </aside>
   </div>
 
   <!-- "Add to playlist" popup menu -->
