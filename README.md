@@ -1,2 +1,2 @@
 # SoloPlayer
-Music streaming service
+Music streaming web player
