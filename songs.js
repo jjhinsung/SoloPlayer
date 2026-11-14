@@ -3,5 +3,5 @@ window.SONGS = [
   "music/JMHBM - Cyberia.mp3",
   "music/JMHBM - Eternity.mp3",
   "music/JMHBM - Neon.mp3",
-  "music/Lukrembo - Breadwinner.mp3"
+  "music/Lukrembo - Bread.mp3"
 ];
