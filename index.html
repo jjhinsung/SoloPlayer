@@ -8,24 +8,6 @@
 </head>
 <body>
   <div class="app">
-    <!-- ===== Sidebar: library + search ===== -->
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <h1>Library</h1>
-        <label class="folder-btn" title="Load songs from a folder on your computer">
-          <input type="file" id="folderInput" webkitdirectory directory multiple accept="audio/*" />
-          Open folder
-        </label>
-      </div>
-
-      <div class="search-wrap">
-        <svg viewBox="0 0 24 24" class="search-icon"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.39 5.4-1.42 1.41-5.39-5.39A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/></svg>
-        <input type="search" id="search" placeholder="Search songs or artists…" autocomplete="off" />
-      </div>
-
-      <p class="library-count" id="libraryCount"></p>
-      <ul class="song-list" id="songList"></ul>
-    </aside>
 
     <!-- ===== Main: player + queue ===== -->
     <main class="main">
@@ -75,6 +57,25 @@
         <ul class="queue-list" id="queueList"></ul>
       </section>
     </main>
+
+    <!-- ===== Sidebar: library + search ===== -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>Library</h1>
+        <label class="folder-btn" title="Load songs from a folder on your computer">
+          <input type="file" id="folderInput" webkitdirectory directory multiple accept="audio/*" />
+          Open folder
+        </label>
+      </div>
+
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" class="search-icon"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.39 5.4-1.42 1.41-5.39-5.39A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/></svg>
+        <input type="search" id="search" placeholder="Search songs or artists…" autocomplete="off" />
+      </div>
+
+      <p class="library-count" id="libraryCount"></p>
+      <ul class="song-list" id="songList"></ul>
+    </aside>
   </div>
 
   <audio id="audio" preload="metadata"></audio>
