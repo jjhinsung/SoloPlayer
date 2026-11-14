@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- ===== Sidebar: library + search ===== -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>Library</h1>
+        <label class="folder-btn" title="Load songs from a folder on your computer">
+          <input type="file" id="folderInput" webkitdirectory directory multiple accept="audio/*" />
+          Open folder
+        </label>
+      </div>
+
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" class="search-icon"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.39 5.4-1.42 1.41-5.39-5.39A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/></svg>
+        <input type="search" id="search" placeholder="Search songs or artists…" autocomplete="off" />
+      </div>
+
+      <p class="library-count" id="libraryCount"></p>
+      <ul class="song-list" id="songList"></ul>
+    </aside>
+
+    <!-- ===== Main: player + queue ===== -->
+    <main class="main">
+      <section class="player">
+        <div class="cover" id="cover"><span id="coverText">♪</span></div>
+
+        <div class="track-info">
+          <h2 id="trackTitle">Nothing playing</h2>
+          <p id="trackArtist">Pick a song from the library</p>
+        </div>
+
+        <div class="progress">
+          <span id="currentTime">0:00</span>
+          <input type="range" id="seek" min="0" max="100" value="0" step="0.1" />
+          <span id="duration">0:00</span>
+        </div>
+
+        <div class="controls">
+          <button class="ctrl small" id="shuffleBtn" title="Shuffle">
+            <svg viewBox="0 0 24 24"><path d="M14.83 13.41 13.42 14.82l3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zM10.59 9.17 5.41 4 4 5.41l5.17 5.17 1.42-1.41z"/></svg>
+          </button>
+          <button class="ctrl" id="prevBtn" title="Previous">
+            <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+          </button>
+          <button class="ctrl play" id="playBtn" title="Play / Pause">
+            <svg viewBox="0 0 24 24" id="playIcon"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <button class="ctrl" id="nextBtn" title="Next">
+            <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+          </button>
+          <button class="ctrl small" id="repeatBtn" title="Repeat library">
+            <svg viewBox="0 0 24 24"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg>
+          </button>
+        </div>
+
+        <div class="volume">
+          <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4z"/></svg>
+          <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8" />
+        </div>
+      </section>
+
+      <section class="queue">
+        <div class="queue-header">
+          <h3>Up next <span id="queueCount"></span></h3>
+          <button class="text-btn" id="clearQueue">Clear</button>
+        </div>
+        <ul class="queue-list" id="queueList"></ul>
+      </section>
+    </main>
+  </div>
+
+  <audio id="audio" preload="metadata"></audio>
+
+  <script src="songs.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
